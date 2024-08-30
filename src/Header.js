@@ -1,7 +1,8 @@
 import Nav from "./Nav";
+import logo from "./icons_assets/Logo.svg"
 function Header() {
     return <header>
-        <img src="../icons_assets/Logo.svg" alt="Little Lemon Logo" />
+        <img src={logo} alt="Little Lemon Logo" />
         <Nav />
     </header>;
 }
