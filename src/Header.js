@@ -1,7 +1,9 @@
+import Nav from "./Nav";
 function Header() {
     return <header>
         <img src="../icons_assets/Logo.svg" alt="Little Lemon Logo" />
-        Little Lemon Restaurant</header>;
+        <Nav />
+    </header>;
 }
 
 export default Header;
