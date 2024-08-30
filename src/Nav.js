@@ -1,9 +1,8 @@
 function Nav() {
     return <nav><ul>
-        <li><a>Link</a></li>
-        <li><a>to</a></li>
-        <li><a>go</a></li>
-        <li><a>here</a></li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+        <li><a href="/reserve">Reserve a Table</a></li>
     </ul></nav>;
 }
 
