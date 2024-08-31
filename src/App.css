@@ -24,9 +24,12 @@ a.button {
   border-radius: 4px;
 }
 
-div.hero {
+main {
   max-width: 80vw;
   margin: 0 auto;
+}
+
+div.hero {
   display: flex;
 }
 

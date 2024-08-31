@@ -14,7 +14,14 @@ function HomePage() {
             </div>
             <img src={restaurant} alt="The restaurant's interior" />
         </div>
-
+        <div className="specials">
+            <h3>Specials</h3>
+            <p>Some other stuff to go here, IDK.</p>
+        </div>
+        <div className="testimonials">
+            <h3>Testimonials</h3>
+            <p>They're really good.</p>
+        </div>
     </React.Fragment>;
 }
 
