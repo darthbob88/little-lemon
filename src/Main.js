@@ -4,7 +4,8 @@ import BookingPage from "./BookingPage";
 import { useReducer } from "react";
 import ConfirmedBooking from "./ConfirmedBooking";
 function Main() {
-    // Because I don't recall this course ever explaining how to interact with a bare third-party script like this.
+    // Because I don't recall this course ever explaining
+    // how to interact with a bare third-party script like this.
     const seededRandom = function (seed) {
         var m = 2 ** 35 - 31;
         var a = 185852;
