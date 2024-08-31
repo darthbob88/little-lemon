@@ -8,6 +8,8 @@ header {
 
 nav ul {
   display: flex;
+  width: calc(80vw - 148px);
+  justify-content: space-around;
 }
 
 nav ul li {
