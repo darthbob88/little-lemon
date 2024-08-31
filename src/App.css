@@ -19,7 +19,7 @@ a.button {
   background-color: black;
   color: white;
   display: inline-block;
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
   border-radius: 4px;
 }
