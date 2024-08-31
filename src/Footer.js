@@ -1,5 +1,5 @@
 function Footer() {
-    return <footer>Stuff to go here</footer>;
+    return <footer>Footer stuff TBA</footer>;
 }
 
 export default Footer;
