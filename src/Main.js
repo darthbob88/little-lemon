@@ -1,7 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import HomePage from "./HomePage";
 import BookingPage from "./BookingPage";
 import { useReducer } from "react";
+import ConfirmedBooking from "./ConfirmedBooking";
 function Main() {
     // Because I don't recall this course ever explaining how to interact with a bare third-party script like this.
     const seededRandom = function (seed) {
@@ -31,6 +32,8 @@ function Main() {
         return true;
     };
 
+    const navigate = useNavigate();
+
     const updateTimes = (availableTimes, date) => {
         console.log(date)
         return fetchAPI(new Date(date));
@@ -38,10 +41,17 @@ function Main() {
     const initializeTimes = () => fetchAPI(new Date());
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
+    const submitForm = (formData) => {
+        if (submitAPI(formData)) {
+            navigate("/confirmed");
+        }
+    }
+
     return <main>
         <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />}></Route>
+            <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitBooking={submitForm} />}></Route>
+            <Route path="/confirmed" element={<ConfirmedBooking />}></Route>
         </Routes>
     </main>;
 }

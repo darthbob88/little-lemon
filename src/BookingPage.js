@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-function BookingPage({ availableTimes, dispatch }) {
+function BookingPage({ availableTimes, dispatch, submitBooking }) {
     return <div>
         <h2>Book a Table</h2>
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitBooking={submitBooking} />
     </div>;
 }
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitBooking }) {
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const [guests, setGuests] = useState();
     const [occasion, setOccasion] = useState();
 
-    return <form style={{ display: "grid", "maxWidth": "200px", gap: "20px" }}>
+    return <form style={{ display: "grid", "maxWidth": "200px", gap: "20px" }} onSubmit={e => { e.preventDefault(); submitBooking(e.target.value) }} >
         <label htmlFor="res-date">Choose date</label>
         <input type="date" id="res-date" value={date} onChange={e => { setDate(e.target.value); dispatch(e.target.value); }} />
         <label htmlFor="res-time">Choose time</label>
