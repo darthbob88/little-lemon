@@ -24,7 +24,7 @@ a.button {
   border-radius: 4px;
 }
 
-main {
+div#root {
   max-width: 80vw;
   margin: 0 auto;
 }
