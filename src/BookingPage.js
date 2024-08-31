@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch }) {
     return <div>
         <h2>Book a Table</h2>
-        <BookingForm />
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
     </div>;
 }
 
-function BookingForm() {
+function BookingForm({ availableTimes, dispatch }) {
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const [guests, setGuests] = useState();
@@ -15,15 +15,10 @@ function BookingForm() {
 
     return <form style={{ display: "grid", "maxWidth": "200px", gap: "20px" }}>
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" value={date} onChange={e => setDate(e.target.value)} />
+        <input type="date" id="res-date" value={date} onChange={e => { setDate(e.target.value); dispatch(e.target.value); }} />
         <label htmlFor="res-time">Choose time</label>
         <select id="res-time " value={time} onChange={e => setTime(e.target.value)}>
-            <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option>
+            {availableTimes.map(time => <option key={time} value={time}>{time}</option>)}
         </select>
         <label htmlFor="guests">Number of guests</label>
         <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={e => setGuests(e.target.value)} />
